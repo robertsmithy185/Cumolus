@@ -1,189 +1,447 @@
-:root{
-    --primary: #80ADC2;
-    --bg:#1C1C1C;
-    --secondPrimary: #53869d;
+:root {
+  --primary: #272727;
+  --bg: #1c1c1c;
+  --secondPrimary: #53869d;
+  --font: "Poppins", sans-serif;
+  --colorFont: #717171;
+}
+div {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
 }
 
 /* Nav */
 body {
-    width: 100vw;
-    box-sizing: border-box;
-    margin:0;
-    background-color:var(--bg);
+  width: 100vw;
+  box-sizing: border-box;
+  margin: 0 auto;
+  background-color: var(--bg);
+}
+
+body::-webkit-scrollbar {
+  display: none;
 }
 
 header {
-    display: flex;
-    justify-content: space-between;
-    width: 100%;
-    height: 3.5rem;
-    align-items: center;
-    }
+  position: fixed;
+  z-index: 1000; /* Atur z-index agar header tetap di depan konten lain */
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: 5vw;
+  width: 100vw;
+  margin: 10px;
+}
 
-img{
-    padding-left: 15px;
-    align-items: center;
-    width: 80px;
-    height: 25px;
+header .logo img {
+  margin-right: 15vw;
+  padding-left: 40px;
+  align-items: center;
+  width: 80px;
+  height: 25px;
 }
-nav{
-    padding: 1rem;
+.logo img:hover {
+  cursor: pointer;
 }
-a{
-    margin: 10px;
-    font-family: "Madimi One", sans-serif;
+.halamanAwal {
+  margin: 0 auto;
+  padding: 1rem;
+  display: flex;
+  height: 12px;
+  align-items: center;
+  justify-content: center;
+  background-color: var(--primary);
+  border-radius: 120px;
+  a {
+    margin: 20px;
+    font-family: "Poppins", sans-serif;
     font-size: 14px;
-    color: #FFFF;
+    color: #ffff;
     text-decoration: none;
-}
-a:hover {
-    color: var(--primary);
+  }
 }
 
-/* Halaman Home */
-/* .Border-Login{
-    border: 2px solid var(--primary);
-    border-radius: 12px;
-    padding: 8px;
-    
+.halamanAwal a:active {
+  transform: translateY(5px);
 }
-.Home {
-    display: flex;
+
+a {
+  font-family: "Poppins", sans-serif;
+  font-size: 14px;
+  color: #ffff;
+  text-decoration: none;
 }
-.Home .FirstBox{
-    margin-top: 40px;
-    margin-left: 10px;
-    align-items: center;
-    width: 35%;
-    height: 500px;
+.halamanAwal a:hover {
+  color: var(--colorFont);
 }
-.Home .FirstBox img{
-    width: 430px;
-    height: 420px;
-    border-top-left-radius: 40px;
-    border-bottom-left-radius: 40px;
+
+header .register {
+  margin-left: 4vw;
+  background-color: white;
+  padding-left: 1.5rem;
+  padding-right: 2rem;
+  padding-top: 0.5rem;
+  padding-bottom: 0.5rem;
+  border-radius: 120px;
+  a {
+    font-family: "Poppins", sans-serif;
+    font-size: 14px;
+    color: var(--bg);
+    text-decoration: none;
+  }
 }
-.Home .SecondBox{
-    width: 65%;
-    height: 500px;
-    background-color: var(--primary);
-    border-top-left-radius: 40px;
-    border-bottom-left-radius: 40px;
+
+header .Login {
+  margin-left: -10vw;
+  background-color: #383838;
+  padding-left: 2rem;
+  padding-right: 2rem;
+  padding-top: 0.5rem;
+  padding-bottom: 0.5rem;
+  border-radius: 120px;
+  a {
+    font-family: "Poppins", sans-serif;
+    font-size: 14px;
+    color: #ffff;
+    text-decoration: none;
+  }
 }
-.Home .SecondBox .Text1 {
-    margin-top: -2rem;
-    margin-left: 2rem;
-    font-family: "Madimi One", sans-serif;
-    font-size: 50px;
-    color: white;
-    font-style: italic;
-    span{
-    }
-} */
+
+.halaman1,
+.halaman2,
+.halaman3,
+.halaman4 {
+  background-image: url(BG3.png);
+  width: 100vw;
+  height: 100vh;
+  margin-top: -10vh;
+  display: flex;
+  align-items: center;
+  margin: 0;
+}
+
+.text3 {
+  width: 100vh;
+  margin-right: 5vw;
+}
+
+.text3 .p1 {
+  font-family: var(--font);
+  color: white;
+  font-weight: bold;
+  font-size: 48px;
+}
+.text3 .p2 {
+  margin-right: 30vh;
+  font-family: var(--font);
+  color: white;
+  font-size: 12px;
+}
+
+.iconImg {
+  width: 50vh;
+}
+.iconImg img {
+  width: 280px;
+  height: 280px;
+}
+
+.Started {
+  display: flex;
+}
+.Started .text4 {
+  padding-left: 10px;
+  padding-right: 30px;
+  padding-top: 5px;
+  padding-bottom: 5px;
+  background-color: var(--colorFont);
+  border-radius: 32px;
+}
+.Started .text4:hover {
+  color: var(--primary);
+}
+
+.material-symbols-outlined {
+  margin-left: -28px;
+  padding-left: 13px;
+  padding-right: 13px;
+  padding-top: 4px;
+  padding-bottom: 4px;
+  border-radius: 32px;
+  background-color: white;
+  font-variation-settings: "FILL" 0, "wght" 400, "GRAD" 0, "opsz" 24;
+  color: black;
+}
+.iconImg2,
+.iconImg4 {
+  width: 50vh;
+  margin: 0;
+}
+.iconImg2 img,
+.iconImg4 img {
+  width: 40vw;
+  height: 100vh;
+}
+
+.text5,
+.text7 {
+  text-align: right;
+  width: 100vh;
+  margin-right: 5vw;
+}
+
+.text5 .p1,
+.text7 .p1 {
+  font-family: var(--font);
+  color: white;
+  font-weight: bold;
+  font-size: 46px;
+}
+.text5 .p2,
+.text7 .p2 {
+  margin-top: -5vh;
+  margin-left: 30vh;
+  font-family: var(--font);
+  color: white;
+  font-size: 12px;
+}
+
+.text6 {
+  width: 100vh;
+  margin-left: 5vw;
+}
+
+.text6 .p1 {
+  font-family: var(--font);
+  color: white;
+  font-weight: bold;
+  font-size: 48px;
+}
+.text6 .p2 {
+  margin-top: -5vh;
+  margin-right: 30vh;
+  font-family: var(--font);
+  color: white;
+  font-size: 12px;
+}
+
+.iconImg3 {
+  margin: 0;
+}
+.iconImg3 img {
+  width: 40vw;
+  height: 100vh;
+  transform: scaleX(-1);
+}
+
+.galeri {
+  width: 900px;
+  height: 100vh;
+  display: flex;
+  overflow-x: scroll;
+  align-items: center;
+}
+
+.galeri::-webkit-scrollbar {
+  display: none;
+}
+
+.galeri div {
+  width: 100%;
+  display: grid;
+  grid-template-columns: auto auto auto;
+  grid-gap: 20px;
+  padding: 10px;
+  flex: none;
+}
+
+.galeri div img {
+  width: 100%;
+  filter: grayscale(100%);
+  transition: transform 0.5s;
+}
+
+.Scrool-Galeri {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 10%;
+}
+
+.Scrool-Galeri .material-symbols-outlined {
+  margin-left: 15px;
+}
+
+#arrow_back,
+#arrow_forward {
+  cursor: pointer;
+}
+
+.galeri div img:hover {
+  filter: grayscale(0);
+  cursor: pointer;
+  transform: scale(1.1);
+}
+
+.text8 {
+  text-align: center;
+  width: 100vh;
+}
+
+.text8 .p1 {
+  font-family: var(--font);
+  color: white;
+  font-weight: bold;
+  font-size: 48px;
+}
+.text8 .p2 {
+  margin-top: -5vh;
+  font-family: var(--font);
+  color: white;
+  font-size: 12px;
+}
 
 /* Login */
-div{
-    display: block;
-    margin-left: auto;
-    margin-right: auto;
+.header2 {
+  background-image: url(BG3.png);
+  position: relative;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: 5.78vw;
+  width: 100vw;
+  margin: 10px;
 }
-.LoginBorder{
-    background-color: var(--primary);
-    width: 800px;
-    height: 450px;
-    box-shadow: 0 0 10px rgba(255, 255, 255, 0.5); /* Menambahkan bayangan */
-    h1{
-        text-align: center;
-        margin-right: 50%;
-        font-size: 50px;
-        padding-top: 20%;
-        padding-left: 20px;
-        color: white;
-        font-family: "Madimi One", sans-serif;
-    }
-    p{
-        margin-right: 50%;
-        padding-left: 10px;
-        color: white;
-        font-family: "Madimi One", sans-serif;
-    }
+.header2 .logoLogin img {
+  margin-top: -10vh;
+  padding-left: 40px;
+  align-items: center;
+  width: 80px;
+  height: 25px;
 }
-
-fieldset{
-    margin-top: -300px;
-    width: 300px;
-    height: 350px;
-    background-color: var(--primary);
-    box-shadow: 0 0 20px rgba(0, 0, 0, 0.3);
-    margin-left: 52%;
-    text-decoration: none;
-    border: none;
-    text-align: center;
-    align-items: center;
-    font-size: 30px;
-    input{
-        margin-top: 10px;
-        border: none;
-        width: 200px;
-        height: 30px;
-        border-radius: 24px;
-        font-family: "Madimi One", sans-serif;
-        text-align: center;
-    }
+.logo img:hover {
+  cursor: pointer;
+}
+.LoginSection {
+  width: 100vw;
+  height: 80vh;
+  background-image: url(BG3.png);
+}
+.LoginSection .BorderLogin {
+  display: grid;
+  justify-content: center;
+  width: 388px;
+  height: 464px;
+  background-color: var(--primary);
+  border-radius: 32px;
+}
+.BorderLogin .logo2 img {
+  padding-top: 2rem;
+  width: 120px;
+  height: 40px;
+}
+.text1 {
+  margin-top: -1rem;
+  color: white;
+  font-family: "Poppins", sans-serif;
 }
 
-.Icon{
-    margin-bottom: -20px;
+.inputemail input {
+  width: 300px;
+  height: 40px;
+  border-radius: 8px;
+  background-color: var(--primary);
+  border: 2px solid var(--colorFont);
+}
+.inputemail input::placeholder {
+  font-family: var(--font);
+  color: var(--colorFont);
+  padding-left: 1rem;
+}
+.inputemail input:focus {
+  color: white;
+  padding-left: 1rem;
+}
+.inputpsw input,
+.inputpswagain input {
+  margin-top: 1rem;
+  width: 300px;
+  height: 40px;
+  border-radius: 8px;
+  background-color: var(--primary);
+  border: 2px solid var(--colorFont);
+}
+.inputpsw input::placeholder,
+.inputpswagain input::placeholder {
+  font-family: var(--font);
+  color: var(--colorFont);
+  padding-left: 1rem;
+}
+.inputpsw input:focus {
+  color: white;
+  padding-left: 1rem;
+}
+.buttonLogin button {
+  margin-top: 1rem;
+  width: 306px;
+  height: 40px;
+  border-radius: 8px;
+  background-color: white;
+  border: 4px solid white;
+}
+.buttonLogin button:hover {
+  cursor: pointer;
+}
+.or p {
+  margin-top: -5px;
+  margin-bottom: -5px;
+  font-family: var(--font);
+  color: white;
+}
+.button2 button {
+  width: 150px;
+  height: 40px;
+  border-radius: 8px;
+  background-color: white;
+  border: none;
+}
+.text2 p {
+  font-family: var(--font);
+  color: white;
+  font-size: 10px;
+}
+.text2 a {
+  font-weight: bold;
+  color: white;
 }
 
-.Icon .facebook{
-    width: 50px;
-    height: 50px;
+/* Animasion */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
 }
 
-.Icon .Google{
-    margin-bottom: 4px;
-    width: 37px;
-    height: 37px;
+.animated-section2,
+.LoginSection {
+  animation: fadeIn 1s ease forwards;
 }
 
-.Icon .Instagram{
-    margin-bottom: 10px;
-    width: 45px;
-    height: 28px;
+.animated-section,
+.animated-section3,
+.animated-section4,
+.animated-section5 {
+  opacity: 0;
+  transition: opacity 1s ease;
 }
 
-.Forget{
-    justify-content: center;
-    text-align: center;
-    margin-top: -10px;
-    font-size: 12px;
-    text-decoration: underline;
+.animated-section.active,
+.animated-section3.active,
+.animated-section4.active,
+.animated-section5.active {
+  opacity: 1;
 }
-
-.Forget:hover {
-    color: var(--bg);
-}
-
-h2{
-    margin-top: 10px;
-    font-family: "Madimi One", sans-serif;
-    color: white;
-}
-button{
-    margin-top: 20px;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2); /* Menambahkan bayangan */
-    border: none;
-    width: 200px;
-    height: 30px;
-    border-radius: 24px;
-    font-family: "Madimi One", sans-serif;
-    text-align: center;
-    color: var(--bg);
-    color: var(--bg);
-    background-image: linear-gradient(to bottom, var(--primary), var(--secondPrimary)50%); /* Gradien linear dari kiri ke kanan */
-}
-button:hover{
-    cursor: pointer;
-}
-
