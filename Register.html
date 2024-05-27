@@ -6,7 +6,7 @@
     <title>Cumolus</title>
     <link
       rel="icon"
-      href="/Logo Cumolus\CulombusImage.PNG"
+      href="/Logo Cumolus/CulombusImage.PNG"
       type="image/x-icon"
     />
     <!-- Html Syle -->
@@ -35,8 +35,25 @@
       rel="stylesheet"
       href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200"
     />
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200"
+    />
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200"
+    />
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0"
+    />
     <!-- JQuery -->
     <script src="jquery-3.7.1.js"></script>
+    <script>
+      $(document).ready(function () {
+        $("#footer").load("footer.html");
+      });
+    </script>
   </head>
   <body>
     <header id="header3" class="header3">
@@ -57,7 +74,7 @@
         <div class="text1">
           <p>Login into Your Account</p>
         </div>
-        <form id="RegisterForm" action="adduser.php" method="POST">
+        <form id="RegisterForm" action="Request.php" method="POST">
           <div class="inputusername">
             <input
               type="text"
@@ -67,7 +84,12 @@
               placeholder="Username"
             />
           </div>
-          <div id="Failedusername"></div>
+          <div id="Failedusername" class="error-message hidden">
+            Username Already in use.
+          </div>
+          <div id="Nullusername" class="error-message hidden">
+            Username cannot be empty
+          </div>
           <div class="inputemailRegister">
             <input
               type="email"
@@ -77,6 +99,12 @@
               placeholder="Email"
             />
           </div>
+          <div id="Failedemail" class="error-message hidden">
+            Email Already used.
+          </div>
+          <div id="NullEmail" class="error-message hidden">
+            Email cannot be empty
+          </div>
           <div class="inputpswregister">
             <input
               type="password"
@@ -85,6 +113,12 @@
               class="input-password"
               placeholder="Password"
             />
+          </div>
+          <div id="Failedpassword" class="error-message hidden">
+            Password must be 8 characters
+          </div>
+          <div id="NullPsw" class="error-message hidden">
+            Password cannot be empty
           </div>
           <div class="buttonRegister" type="submit" name="buttonRegister">
             <button>Register</button>
@@ -108,49 +142,30 @@
         </form>
       </div>
     </section>
-    <footer id="footer" class="footerHome">
-      <div class="item-left">
-        <a class="logofooter" href="Home.html">
-          <img src="/Logo Cumolus/Culombus2.PNG" />
-        </a>
-        <div class="textfooter">
-          <p>Featured Products</p>
-          <p>Promt</p>
-          <p>Program Code</p>
-          <p>Image</p>
-          <p>Creator</p>
-        </div>
-      </div>
-      <div class="item-right">
-        <div class="textfooter2">
-          <p>Get every product update</p>
-          <input
-            type="email"
-            name="email"
-            id="email"
-            class="input-email"
-            placeholder="Email"
-          />
-          <a href="Home.html" class="material-symbols-outlined">
-            arrow_forward
-          </a>
-          <p>Contack us :</p>
-        </div>
-        <img src="/item/Twitter.PNG" alt="" />
-        <img src="/item/ig.PNG" alt="" />
-        <img src="/item/Wa.PNG" alt="" />
-        <img src="/item/Telegram.PNG" alt="" />
-      </div>
-    </footer>
+    <div id="footer"></div>
     <script>
       $(document).ready(function () {
-        // Ambil parameter error dari URL jika ada
         const urlParams = new URLSearchParams(window.location.search);
         const error = urlParams.get("error");
 
-        // Jika parameter error ada dan bernilai 1, tampilkan pesan kesalahan
         if (error === "1") {
-          $("#Failedusername").text("Username atau Email telah digunakan.");
+          $(".inputusername").addClass("input-error");
+          $("#Failedusername").removeClass("hidden");
+        } else if (error == "2") {
+          $(".inputpswregister").addClass("input-error");
+          $("#Failedpassword").removeClass("hidden");
+        } else if (error === "3") {
+          $(".inputemailRegister").addClass("input-error");
+          $("#Failedemail").removeClass("hidden");
+        } else if (error === "4") {
+          $(".inputusername").addClass("input-error");
+          $("#Nullusername").removeClass("hidden");
+        } else if (error === "5") {
+          $(".inputemailRegister").addClass("input-error");
+          $("#NullEmail").removeClass("hidden");
+        } else if (error == "6") {
+          $(".inputpswregister").addClass("input-error");
+          $("#NullPsw").removeClass("hidden");
         }
       });
     </script>
