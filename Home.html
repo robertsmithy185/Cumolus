@@ -6,7 +6,7 @@
     <title>Cumolus</title>
     <link
       rel="icon"
-      href="/Logo Cumolus\CulombusImage.PNG"
+      href="/Logo Cumolus/CulombusImage.PNG"
       type="image/x-icon"
     />
     <!-- Html Syle -->
@@ -49,9 +49,14 @@
     />
     <!-- JQuery -->
     <script src="jquery-3.7.1.js"></script>
+    <script>
+      $(document).ready(function () {
+        $("#footer").load("footer.html");
+      });
+    </script>
   </head>
   <body>
-    <header>
+    <header class="headerHome">
       <a class="logo" href="Home.html">
         <img src="/Logo Cumolus/Culombus2.PNG" />
       </a>
@@ -167,41 +172,7 @@
         </span>
       </div>
     </section>
-    <footer id="footer" class="footerHome">
-      <div class="item-left">
-        <a class="logofooter" href="Home.html">
-          <img src="/Logo Cumolus/Culombus2.PNG" />
-        </a>
-        <div class="textfooter">
-          <p>Featured Products</p>
-          <p>Promt</p>
-          <p>Program Code</p>
-          <p>Image</p>
-          <p>Creator</p>
-        </div>
-      </div>
-      <div class="item-right">
-        <div class="textfooter2">
-          <p>Get every product update</p>
-          <input
-            type="email"
-            name="email"
-            id="email"
-            class="input-email"
-            placeholder="Email"
-          />
-          <a href="Home.html" class="material-symbols-outlined">
-            arrow_forward
-          </a>
-          <p>Contack us :</p>
-        </div>
-        <img src="/item/Twitter.PNG" alt="" />
-        <img src="/item/ig.PNG" alt="" />
-        <img src="/item/Wa.PNG" alt="" />
-        <img src="/item/Telegram.PNG" alt="" />
-      </div>
-    </footer>
-
+    <div id="footer"></div>
     <script>
       window.addEventListener("scroll", function () {
         document
